@@ -1,0 +1,81 @@
+.modal{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 6;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .modal-content{
+    top: 0px;
+    padding: 20px;
+    border-radius: 12px;
+    /* border: #061518 solid 1px; */
+    background-color: #1B3247;
+    color: white;
+    height: 500px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    z-index: 7;
+  }
+  .register_button{
+    margin-top: 20px;
+    height: 40px;
+  }
+  /* Слайдер(вкл/выкл) начало */
+.switch {
+    margin-top: 5px;
+    margin-bottom: 0px;
+    position: relative;
+    display: inline-block;
+    /* width: 55px; */
+    height: 27px;
+  }
+  
+  .switch input {display:none;}
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1B3247;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 38px;
+    bottom: 4px;
+    background-color: rgb(255, 255, 255);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #1B3247;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(50px);
+    -ms-transform: translateX(50px);
+    transform: translateX(90px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  /* Слайдер(вкл/выкл) конец */

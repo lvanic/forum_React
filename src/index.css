@@ -1,0 +1,43 @@
+
+
+/*//////////////////menu//////////////////*/
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.disp{
+  overflow: hidden;
+  height: 20px;
+}
+
+.select-page{
+  height: 30px;
+  width: 100%;
+  display: flex;
+}
+.select-page-button{
+  text-align: center;
+  width: 30px;
+  border: black solid 1px;
+  
+}
+
+
+
+
+#dropTr{
+  background-color: gainsboro;
+}
+#dropTr:hover{
+  cursor: pointer;
+  background-color: rgb(128, 39, 39);
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
