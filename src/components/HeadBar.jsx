@@ -43,7 +43,7 @@ function HeadBar(props) {
         'Content-Type': 'application/json'
       },
     };
-    await fetch(`https://localhost:3001/search?search=${search}`, requestOptions)
+    fetch(`${process.env.REACT_APP_SERVER_NAME}/search?search=${search}`, requestOptions)
       .then(response => response.json())
       .then(response => {
         setDropDown([...response])
@@ -57,7 +57,7 @@ function HeadBar(props) {
         'Authorization': 'Bearer ' + localStorage.getItem('key')
       },
     };
-    await fetch('https://localhost:3001/user', requestOptions)
+    fetch(`${process.env.REACT_APP_SERVER_NAME}/user`, requestOptions)
       .then(response => response.json())
       .then(response => {
         if (response.name != undefined) {

@@ -8,26 +8,31 @@
     flex-direction: column;
     height: 100vh; 
     border-radius: 12px;
+    width:300px;
   }
   .question-link{
     text-decoration: none;
   }
-  .question-link:hover{
-    
-  }
+ 
   .smth_link{
     text-decoration: none;
     color:white;
   }
   .smth_link:hover{
-    color: crimson;
+    color: rgb(2, 156, 156);
   }
   .razd{
+    font-size: 30px;
+    height: 40px;
+    width: 90%;
     display: flex;
     border-bottom: 2px solid white;
-    padding-top: 15px;
-    padding-bottom: 4px;
-    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    font-size: 30px;
+    height: 40px;
+    width: 90%;
+    margin-left: 5%;
     color: #ffffff;
     justify-content: space-evenly;
     align-items: center;
@@ -37,10 +42,9 @@
     margin-bottom: 0;
   }
   .smth:hover{
-    color:crimson
+    color:#50d3ff;
   }
   .smth{
-    padding: 10px;
     padding-left: 35px;
     padding-right: 35px;
     cursor: pointer;
@@ -48,21 +52,34 @@
     color: white;
     font-size: 20px;
     border-bottom: 2px solid white;
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
     color: #ffffff;
-    
-    padding-bottom: 20px;
+    padding-bottom: 15px;
+    padding-top: 15px;
   }
-
+  @media  (min-width: 581px) and (max-width: 707px){
+.questions{
+  width: 190px;
+}
+.smth{
+ 
+  font-size: 15px;
+}
+  }
   @media screen and (max-width: 545px) {
+   .razd{font-size: 15px;}
+    .questions{
+      width: 45%;
+    }
     .smth{
         cursor: pointer;
         text-align: center;
         color: white;
         font-size: 16px;
         border-bottom: 2px solid white;
-        width: 100%;
         color: #ffffff;
+        padding-left: 15%;
       }
 }
 @media screen and (max-width: 500px) {

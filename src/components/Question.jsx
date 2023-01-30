@@ -3,42 +3,56 @@ import { useLocation, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useMemo } from "react";
 import "../css/question.css"
+import ImageOpen from './ImageOpen.jsx'
 function Question(props) {
-
-    //window.scrollTo(0, 0);
-
-
     let location = useLocation()
     const [question, setQestion] = useState();
+    const [selectedPhoto, setSelectedPhoto] = useState('');
 
     useEffect(() => {
         async function fetchQuestion() {
-            await fetch('https://localhost:3001/question' + location.search)//TODO: ${} not working
+            await fetch(`${process.env.REACT_APP_SERVER_NAME}/question${location.search}`)
                 .then(response => response.json())
                 .then(response => {
                     setQestion(response);
-                    //console.log(response)
                 })
         }
         fetchQuestion();
     }, [])
+
+    useEffect(() => {
+
+    }, [question])
     if (question != undefined) {
-        //console.log(question.files[0])
         return (
-            <div className="info">
-                <div className="title">{question.title}</div>
-                <div className="description">{question.description}</div>
-                <div className="user">{question.user.name}</div>
-                <div className="photos">
-                    {question.files.map(el =>
-                        <img src={`data:image/png;base64,${el}`} className="photoQuestion" />)}
+            <>
+                <div className="info">
+                    <div className="name">{question.title}</div>
+                    <div className="description">
+                        {question.description}
+                    </div>
+                    {
+                        question.files.map(el =>
+                            <img src={`data:image/png;base64,${el}`} onClick={(e) => {
+                                setSelectedPhoto(`data:image/png;base64,${el}`)
+                            }} className="photoQuestion" />)
+                    }
+                    <div className="user_name">{question.user.name}</div>
+                    <Comments comments={question.comments} />
                 </div>
-                <Comments comments={question.comments} />
-            </div>
+
+                {
+                    selectedPhoto != '' ?
+                        <ImageOpen photo={selectedPhoto} selectedPhoto={setSelectedPhoto} />
+                        :
+                        null
+                }
+
+            </>
         );
     }
     else {
-        return (<div style={{ width: '40%', textAlign: 'center', fontSize: '18px', marginLeft: 'auto', marginRight: 'auto' }}>Error</div>);
+        return (<div style={{ width: '40%', textAlign: 'center', fontSize: '18px', marginLeft: 'auto', marginRight: 'auto' }}>Wait...</div>);
     }
 
 }

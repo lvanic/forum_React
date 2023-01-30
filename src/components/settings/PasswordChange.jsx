@@ -27,7 +27,10 @@ function PasswordChange(props) {
         }
     }, [newPassword, newPasswordConfirm])
     const SendPasswordChange = async () => {
-        const response = await fetch('https://localhost:3001/change-password', requestOptions);
+        const response = await fetch(`${process.env.REACT_APP_SERVER_NAME}/change-password`, requestOptions);
+        if(response.ok){
+            props.setModalOpen(false)
+        }
     }
     return (
         <div className='passwordChange'>

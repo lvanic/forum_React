@@ -7,12 +7,14 @@
     z-index: 6;
     display: flex;
     justify-content: space-evenly;
+    background-color: #00000059;
+    pointer-events: visibleFill;
   }
   .modal-content{
     top: 0px;
     padding: 20px;
     border-radius: 12px;
-    /* border: #061518 solid 1px; */
+  margin-top: 100px;
     background-color: #1B3247;
     color: white;
     height: 500px;
@@ -20,6 +22,7 @@
     display: flex;
     flex-direction: column;
     z-index: 7;
+    box-shadow: 0 0 10px #658995;
   }
   .register_button{
     margin-top: 20px;
@@ -47,6 +50,7 @@
     background-color: #1B3247;
     -webkit-transition: .4s;
     transition: .4s;
+    
   }
   
   .slider:before {

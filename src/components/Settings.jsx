@@ -5,16 +5,13 @@ import PasswordChange from './settings/PasswordChange';
 function Settings(props) {
     const [isPasswordChange, setPasswordIsChange] = useState(false)
     return (
-        <div className="modal">
-            <div className="modal-content">
+        <div className="settings-modal">
+            <div className="settings-modal-content">
                 <div onClick={() => setPasswordIsChange(!isPasswordChange)}>{props.language.changePassword}</div>
                 {
                     isPasswordChange ?
-                        <PasswordChange /> : null
+                        <PasswordChange setModalOpen={props.setModalOpen} /> : null
                 }
-            </div>
-            <div className="modal-environment" onClick={() => props.setModalOpen(false)}>
-
             </div>
         </div>
     )

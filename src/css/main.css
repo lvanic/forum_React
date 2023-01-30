@@ -1,6 +1,9 @@
+*{
+    
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 .info {
-    margin-top: 1%;
-    margin-right: 1%;
+    
     position: relative;
     display: flex;
     flex-direction: column;
@@ -16,16 +19,17 @@
     align-items: flex-start;
     justify-content: center;
     height: 50px;
+    width: 85%;
 }
 td {
-    height: 125px;
-    padding-left: 5%;
+    height: 190px;
+    padding-left: 2%;
 }   
 .sect {
     float: left;
     background-color: #1B3247;
     color: white;
-    width: 100px;
+    width: 90px;
     height: 25px;
     display: flex;
     text-align: center;
@@ -38,13 +42,14 @@ td {
 
 p {
     color: #101E2B;
+    text-transform: uppercase;
     text-align: center;
     font-weight: bold;
     font-size: 30px;
 }
 
 strong {
-    color: #1B3247;
+    color: #101E2B;
     font-size: 20px;
 }
 
@@ -52,14 +57,16 @@ strong {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    height: 97px;
+    
 }
 #askIdDiv{
     text-decoration: none;
     /* border: 2px solid rgb(128, 39, 39); */
     height: 60px;
     display: flex;
-    border-radius: 3px;
-    width: 80px;
+    border-radius: 6px;
+    width: 100px;
     text-align: center;
     color: white;
     font-weight: bold;
@@ -67,6 +74,7 @@ strong {
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    font-size: 20px;
 }
 
 .table_header {
@@ -74,6 +82,7 @@ strong {
     flex-direction: row;
     justify-content: space-between;
     justify-content: center;
+    height:110px;
 }
 td{
     display: flex;
@@ -81,12 +90,14 @@ td{
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
-    margin: 10px;
+    margin: 23px;
 }
 .td_question{
     background-color: #C0DCE4;
-    border-radius: 6px;
+    border-radius: 12px;
     justify-content: space-between;
+    color: #4A7786;
+    padding-right: 2%;
 }
 .table_info{
     background-color: #D3EAF1;
@@ -96,6 +107,7 @@ td{
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    padding-bottom: 25px;
 }
 .pagination {
     display: flex;
@@ -118,7 +130,7 @@ td{
   
   ul.pagination li a {
     text-decoration: none;
-    color: #337ab7;
+    color: #1B3247;
     font-size: 20px;
   }
   
@@ -126,18 +138,18 @@ td{
     color: white;
   }
   ul.pagination li.active {
-    background-color: #337ab7;
+    background-color: #1B3247;
   }
   
   ul.pagination li a:hover,
   ul.pagination li a.active {
-    color: blue;
+    color: #50d3ff;
   }
   
   .page-selection {
     width: 48px;
     height: 30px;
-    color: #337ab7;
+    color: #101E2B;
   }
   
   .pagination-wrapper {
@@ -148,13 +160,25 @@ td{
 
 .table_user_name{
     margin-right: 5%;
+    font-weight: bold;
+    color:#101E2B;
+    
 }
+
+@media screen and (max-width: 786px) {
+   .td_question{
+    font-size: 8px;
+   }
+   .table_title{
+    margin-top: 0;
+   }
+    }
 @media screen and (max-width: 580px) {
     .sect{
         font-size: 12px;
     }
     .td_question{
-        font-size: 13px;
+        font-size: 0px;
     }
     strong {
         font-size: 15px;
@@ -167,17 +191,30 @@ td{
         justify-content: center;
         flex-direction: column;
         height: auto;
+        width: 130px;
         padding-left: 0px;
         align-content: space-around;
         align-items: center;
+        margin-top: 20px;
     }
     .table_header{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        height: 100px;
     }
     #askIdDiv{
-        width: 50%;
+        width: 40%;
+        font-size: 15px;
+        height: 50px;
+      
+    }
+    .table_title{
+        margin: 0;
+        padding-left: 10%;
+    }
+    tr{
+        width: 55%;
     }
 }
 @media screen and (max-width: 385px) {
@@ -185,10 +222,12 @@ td{
         font-size: 10px;
     }
     .td_question{
-        font-size: 10px;
+        font-size: 0;
+        height: 90px;
     }
     strong {
         font-size: 10px;
+        padding-bottom: 5px;
     }
     p{
         font-size: 17px;
@@ -199,5 +238,14 @@ td{
     .sect{
         font-size: 10px;
     }
+    #askIdDiv{
+        margin-left: 70%;
+        font-size: 10px;
+        height:30px
+
+    }
+    p{
+margin-left: 100%;
+    }
     
-}
+} 

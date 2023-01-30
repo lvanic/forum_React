@@ -28,13 +28,13 @@
 }
 
 .topnav a:hover {
-    background-color: #ddd;
-    color: black;
+    background-color:#4A7786;
+    color: white;
 }
 
 .topnav a.active {
-    background-color: #ddd;
-    color: black;
+    background-color: #4A7786;
+    color: white;
 }
 
 .topnav input[type=text] {
@@ -69,11 +69,17 @@
 
 .header_contacts {
     top: 48px;
-    background: lightgrey;
+    background-color: #4A7786;
+    color: #101E2B;
     position: absolute;
     z-index: 1;
-    width: 210px;
+    width: 160px;
     margin-left: -15px;
+    border-radius: 6px;
+    margin-top: 8px;
+}
+#dropTr{
+    background-color: #D3EAF1;
 }
 
 @media screen and (max-width: 675px) {

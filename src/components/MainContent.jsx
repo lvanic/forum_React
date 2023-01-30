@@ -10,7 +10,8 @@ function MainContent(props) {
 
   useEffect(() => {
     async function fetchQuestion() {
-      await fetch('https://localhost:3001/questions?page=' + props.page + '&filter=' + props.topic)//TODO: ${} not working
+
+      await fetch(`${process.env.REACT_APP_SERVER_NAME}/questions?page=` + props.page + '&filter=' + props.topic)//TODO: ${} not working
         .then(response => response.json())
         .then(response => {
           setThemes(response.questions);
@@ -26,7 +27,7 @@ function MainContent(props) {
   }
 
   function setActiveIndex(value) {
-    props.setIndex(value);
+   
   }
   const [pages, setPages] = useState(0)//Количество страниц
   const [themes, setThemes] = useState([]);//Массив объектов с вопросами на форуме
@@ -53,16 +54,16 @@ function MainContent(props) {
 
             <tr key={k} onClick={() => { navigate('/question?id=' + theme.questionId); setActiveIndex(theme.questionId) }} style={{ cursor: 'pointer' }}>
               <td className='td_question'>
-
                 <strong>{theme.title}</strong>
                 <br />
                 {theme.description}
                 <br />
                 <div className='container_user_sect'>
                   <div className="sect">{theme.section}</div>
-                  <div className='table_user_name'>{theme.user.name}</div>
+                  <div className='table_user_name'>{theme.userName}</div>
                 </div>
               </td>
+
             </tr>
 
 

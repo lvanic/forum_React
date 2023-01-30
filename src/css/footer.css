@@ -1,0 +1,24 @@
+.footerForum {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(16, 30, 43);
+    top: 0px;
+    position: sticky;
+    align-items: center;
+}
+.footerForumImage{
+    scale: 0.9;
+}
+.footerForumText{
+    
+}
+@media screen and (max-width: 660px) {
+    .footerForumImage{
+        scale: 0.2;
+    }
+    .footerForumText{
+        scale: 0.8;
+    }
+}

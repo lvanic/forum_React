@@ -4,7 +4,7 @@ import CommentItem from "./CommentItem"
 
 
 
-const CommentsList = ({commentsList, deleteComment, editComment}) => {
+const CommentsList = ({commentsList, editComment, deleteComment, changeComment}) => {
     const [sortByDate, setSortByDate] = useState(true)
     const [sortedCommentList, setSortCommentList] = useState([...commentsList])
     useEffect(() =>{
@@ -16,11 +16,11 @@ const CommentsList = ({commentsList, deleteComment, editComment}) => {
     },[commentsList])
     
     return (    
-        <div className={'commentsList'}>
+        <div style={{width:'90%'}}>
             <div onClick={() => setSortByDate(!sortByDate)}>Date</div>
             {sortedCommentList.map((comment) => //sort by date
             (
-                <CommentItem key={comment.id} commentInfo={comment} deleteComment={deleteComment} editComment={editComment}/>
+                <CommentItem key={comment.id} commentInfo={comment} deleteComment={deleteComment} editComment={changeComment}/>
             ))
             }
         </div>

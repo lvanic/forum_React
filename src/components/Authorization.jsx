@@ -38,10 +38,10 @@ function Authorization(props){
             };
             let response;
             if(isAuthorization){
-                response = await fetch('https://localhost:3001/authorization', requestOptions);
+                response = await fetch(`${process.env.REACT_APP_SERVER_NAME}/authorization`, requestOptions);
             }
-            else{
-                response = await fetch('https://localhost:3001/register', requestOptions);
+            else if(!isAuthorization && password == confirmPassword){
+                response = await fetch(`${process.env.REACT_APP_SERVER_NAME}/register`, requestOptions);
             }
             
             if(response.status == 200){
